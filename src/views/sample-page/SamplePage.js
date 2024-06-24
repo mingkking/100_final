@@ -11,7 +11,7 @@ const SamplePage = () => {
       <DashboardCard title="Sample Page">
         <Typography>This is a sample page233442</Typography>
 
-        <Typography>혜경 test</Typography>
+        <Typography>혜경이의 최종 커밋 앤 푸시</Typography>
       </DashboardCard>
     </PageContainer>
   );
