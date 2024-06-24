@@ -67,7 +67,9 @@ const SalesOverview = () => {
             tickAmount: 4,
         },
         xaxis: {
+
             categories: ['24/01', '24/02', '24/03', '24/05', '24/06', '23/07', '22/09', '23/10','25/11'],
+
             axisBorder: {
                 show: false,
             },
