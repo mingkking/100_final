@@ -9,7 +9,7 @@ const SamplePage = () => {
     <PageContainer title="Sample Page" description="this is Sample page">
 
       <DashboardCard title="Sample Page">
-        <Typography>이거슨샘플ㅋzz</Typography>
+        <Typography>혜경이의 pull</Typography>
       </DashboardCard>
     </PageContainer>
   );
