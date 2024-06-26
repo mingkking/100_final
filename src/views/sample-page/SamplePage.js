@@ -44,6 +44,9 @@ const SamplePage = () => {
 
       getInfo();
 
+      // 주소로 좌표를 검색하는 함수 추가
+      const geocoder = new window.kakao.maps.services.Geocoder();
+
       
     }
   }, []);

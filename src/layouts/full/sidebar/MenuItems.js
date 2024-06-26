@@ -5,21 +5,14 @@ import {
 import { uniqueId } from 'lodash';
 
 const Menuitems = [
-  {
-    navlabel: true,
-    subheader: 'Home',
-  },
-
+  
   {
     id: uniqueId(),
     title: 'Dashboard',
     icon: IconLayoutDashboard,
     href: '/dashboard',
   },
-  {
-    navlabel: true,
-    subheader: 'Utilities',
-  },
+  
   {
     id: uniqueId(),
     title: 'Typography',
@@ -32,10 +25,7 @@ const Menuitems = [
     icon: IconCopy,
     href: '/ui/shadow',
   },
-  {
-    navlabel: true,
-    subheader: 'Auth',
-  },
+  
   {
     id: uniqueId(),
     title: 'Login',
@@ -48,10 +38,7 @@ const Menuitems = [
     icon: IconUserPlus,
     href: '/auth/register',
   },
-  {
-    navlabel: true,
-    subheader: 'Extra',
-  },
+  
   {
     id: uniqueId(),
     title: 'Icons',

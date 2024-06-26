@@ -14,7 +14,7 @@ const ecoCard = [
         title: 'Boat Headphone',
         subheader: 'September 14, 2023',
         photo: img1,
-        salesPrice: 375,
+        salesPrice: 300,
         price: 285,
         rating: 4,
     },
