@@ -1,19 +1,22 @@
 import React from 'react';
 import Menuitems from '../sidebar/MenuItems';
-import { Box, List, AppBar, Toolbar, styled, Stack, IconButton } from '@mui/material';
+import { Box, AppBar, Toolbar, styled, Stack, IconButton, Badge, Button } from '@mui/material';
 import PropTypes from 'prop-types';
 import NavItem from '../sidebar/NavItem';
 import NavGroup from '../sidebar/NavGroup/NavGroup';
 
 // components
 import Profile from './Profile';
-import { IconMenu } from '@tabler/icons';
+import { IconBellRinging, IconMenu } from '@tabler/icons';
 import { useLocation } from 'react-router';
 
 const Header = (props) => {
 
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
-  // const lgDown = useMediaQuery((theme) => theme.breakpointfs.down('lg'));
+  // const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
+
+  const { pathname } = useLocation();
+  const pathDirect = pathname;
 
 
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
@@ -28,30 +31,57 @@ const Header = (props) => {
   const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
     width: '100%',
     color: theme.palette.text.secondary,
-    justifyContent: 'center', // 가운데 정렬로 변경
   }));
-
-  const { pathname } = useLocation();
-        const pathDirect = pathname;
 
   return (
     <AppBarStyled position="sticky" color="default">
       <ToolbarStyled>
-        <Box/>
-            {Menuitems.map((item) => {
-              // {/********SubHeader**********/}
-              if (item.subheader) {
-                return <NavGroup item={item} key={item.subheader} />;
+        <IconButton
+          color="inherit"
+          aria-label="menu"
+          onClick={props.toggleMobileSidebar}
+          sx={{
+            display: {
+              lg: "none",
+              xs: "inline",
+            },
+          }}
+        >
+          <IconMenu width="20" height="20" />
+        </IconButton>
 
-                // {/********If Sub Menu**********/}
-                /* eslint no-else-return: "off" */
-              } else {
-                return (
-                  <NavItem item={item} key={item.id} pathDirect={pathDirect} />
-                );
-              }
-            })}
+
+        <IconButton
+          size="large"
+          aria-label="show 11 new notifications"
+          color="inherit"
+          aria-controls="msgs-menu"
+          aria-haspopup="true"
+          sx={{
+            ...(typeof anchorEl2 === 'object' && {
+              color: 'primary.main',
+            }),
+          }}
+        >
+        
+        {Menuitems.map((item) => {
+          // {/********SubHeader**********/}
+          if (item.subheader) {
+            return <NavGroup item={item} key={item.subheader} />;
+
+            // {/********If Sub Menu**********/}
+            /* eslint no-else-return: "off" */
+          } else {
+            return (
+              <NavItem item={item} key={item.id} pathDirect={pathDirect} />
+            );
+          }
+        })}
+
+        </IconButton>
+        <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
+          
           <Profile />
         </Stack>
       </ToolbarStyled>
