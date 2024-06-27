@@ -44,9 +44,11 @@ const YearlyBreakup = () => {
     },
     dataLabels: {
       enabled: false,
+      // 그래프 데이터에 대한 수치
     },
     legend: {
       show: false,
+      // true로 줬을때 그래프가 legent에 밀려서 사라짐
     },
     responsive: [
       {
@@ -60,6 +62,7 @@ const YearlyBreakup = () => {
     ],
   };
   const seriescolumnchart = [38, 40, 25];
+  // 그래프 시리즈에 대한 값들 
 
   return (
     <DashboardCard title="Yearly Breakup">
